@@ -1,13 +1,32 @@
 
 <div align="center">
-	<img src="https://cdn.iconscout.com/icon/free/png-256/college-186-458321.png" width="120" alt="College 3D Icon"/>
-	<img src="https://cdn.iconscout.com/illustration/premium/thumb/student-studying-3121462-2618962.png" width="180" alt="Student Studying Illustration"/>
-	<img src="https://cdn.iconscout.com/animation/premium/thumb/student-learning-3456789-1234567.gif" width="160" alt="Student Learning Animation"/>
+	<h1 style="
+		font-size: 3em;
+		font-family: 'Segoe UI', 'Arial', sans-serif;
+		background: linear-gradient(90deg, #ff6a00, #ee0979, #43cea2, #185a9d);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		text-shadow: 2px 2px 8px #888, 0 0 20px #ee0979;
+		animation: gradientMove 3s ease-in-out infinite alternate;
+		margin-bottom: 0.2em;
+	">CollegeCode Repository</h1>
+	<p style="
+		font-size: 1.3em;
+		color: #222;
+		background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		text-shadow: 1px 1px 6px #43cea2;
+		margin-top: 0;
+		font-weight: 500;
+	">A beautiful collection of my college codes, projects, and assignments.<br>Stay tuned for Web Technologies, Advanced Java, and DSA in Java!</p>
+	<style>
+		@keyframes gradientMove {
+			0% {background-position: 0% 50%;}
+			100% {background-position: 100% 50%;}
+		}
+	</style>
 </div>
-
-# CollegeCode Repository
-
-Welcome to the **CollegeCode** repository! This is a comprehensive collection of code and resources from my college coursework, including assignments, lab work, and projects. The repository is organized to help you easily find solutions and reference material for various subjects.
 
 ## Repository Structure
 
