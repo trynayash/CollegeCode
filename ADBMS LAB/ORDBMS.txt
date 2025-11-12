@@ -1,0 +1,75 @@
+1. Create object type 'Name' with Object Attributes 'FName' and 'LName'.
+
+create type Name as object(FName varchar2(10), LName varchar2(10));
+/
+
+2. Creating table 'Person' with attribute 'PName' of type 'Name'
+
+create table Person(PName Name);
+
+3. inserting values in table Person
+
+insert into Person values(Name('Ashish','Yadav'));
+
+desc Person;
+desc Name;
+
+4. Display FirstName and LastName using table Person.
+
+select p.PName.FName from Person p;
+
+select p.PName.FName, p.PName.LName from Person p;
+--> Create object type 'Address' with Object attributes 'Street', 'city'.
+Display street and city of a person using table 'People'.
+also display the person 'Name' and 'DOB' using 'Name' and 'Date' Object type.  
+ 1. object type 'Address'
+create type Address as object
+(
+Street varchar2(10),
+City varchar2(10)); 
+/
+
+create table People
+(pname Name, Addrs Address, DOB Date);
+
+insert into People vlues
+(
+Name('Aditya','Sakpal'),
+Address('SVRoad','Mumbai'),
+to_date('03-10-1998','dd-mm-yyyy')
+);
+select pl.pname.FName, pl.pname.LName from People pl;
+
+select pl.Addrs.Street, pl.Addrs.City from 
+People pl;
+
+select DOB from People;
+
+// using member function 
+1. create object type 'Demo' with Object attributes 'ID' and function 'get_sqaure'. 
+use this function to return the square of ID attribute value. 
+ 
+create type Demo11 as object
+(
+ID number,
+member function get_square
+return number);
+/
+create table Demonew 
+(col Demo11);
+
+insert into Demonew values(Demo11(8));
+
+create type body Demo
+is member function get_square
+return number
+is n number;
+begin
+select s.col.ID*s.col.ID into n
+from Demotbl s;
+return(n);
+end;
+end;
+/
+
+select v.col.get_square() from Demotbl v;

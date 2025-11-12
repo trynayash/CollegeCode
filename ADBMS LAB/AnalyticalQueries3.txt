@@ -1,0 +1,36 @@
+create table demo1
+(
+empid number(5),
+empname varchar2(15), 
+depname varchar2(15), 
+salary number(8), 
+gender varchar2(8)
+);
+
+insert into demo1 values(101,'samiksha','development',57000,'female');
+
+
+insert into demo1 values(104,'neha','testing',48000,'female');
+
+insert into demo1 values(106,'megha','support',62000,'female');
+
+1. to display sum of all salary
+
+select sum(salary) from demo1;
+
+2. to display sum of salary department wise
+
+select depname, sum(salary) from demo1 group by depname;
+
+3. applying rollup on depname
+
+select depname, sum(salary) from demo1 group by rollup(depname);
+
+select gender, depname, sum(salary) from demo1 group by rollup(depname,gender);
+
+lag():
+
+select empname, sal, lag(sal,1) over(order by sal) as prev_sal from demo1; 
+
+
+select empname, sal, lag(sal,1) over(partition by depname order by sal) as prev_sal from demo1; 

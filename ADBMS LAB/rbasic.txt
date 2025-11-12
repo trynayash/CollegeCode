@@ -1,0 +1,136 @@
+Basic R commands 
+1. creating list
+
+list6[2:4]
+concatenate 2 list
+list8<-c(list6,list7)
+list8
+
+->mont("mar","apr","jan","feb")
+->mont
+->sort(mont)
+->months[3]
+->sort(mont,decreasing=TRUE)
+-------------------
+list_rep<-rep(c(1,2,3),3)
+list_rep<-rep(c(1,2,3),times=3)
+
+list_rep<-rep(c(1,2,3),each=3)
+list_rep<-rep(c(1,2,3),times=c(3,4,1))
+
+num_rand<-seq(from=0, to=50)
+num_rand
+
+num_rand<-seq(from=0, to=50, by=5)
+
+num_ar<-c(1:20)
+num_ar
+
+Array:  dim(3,2,3)-->(3rows,2cols,3arrays)
+m_arr<-array(num_ar,dim=c(3,2,3))
+
+m_arr[3,2,2] -->12
+             -->14
+             -->4
+DataFrame:
+empid<-c(11,12,13,14,15)
+empname<-c("aa","bb","cc","dd","ee")
+datf<-data.frame(empid,empname)
+datf
+
+datf$empid
+datf$empname
+
+nrow(datf)
+ncol(datf)
+
+names(datf)
+//alter col name
+names(datf)[1]<-"std_id"
+names(datf)[2]<-"std_name"
+datf
+//adding row --> rbind()
+stdf<-rbind(datf,c(16,"ff"))
+stdf
+datf
+
+//adding col -->cbind
+std_n<-cbind(stdf, marks=c())
+
+// if else
+a<-30
+b<-50
+if(b>a){
+print("b is greater")
+} else if(a>b){
+print("a is greater")
+}
+
+a<-2
+while(a<8){
+print(a)
+a<-a+1
+}
+
+months<-list("jan","feb","mar","apr")
+for(x in months)
+{
+if(x=="mar")
+{
+next
+}
+print(x)
+}
+//matrix
+matrx1<-matrix(c(1,2,3,4,5,6,7,8,9),nrow=3,ncol=3)
+matrx1
+matrx2<-matrix(c(11,12,13,14,15,16,17,18,19),nrow=3,ncol=3)
+matrx2
+
+matrx1+matrx2
+matrx1*matrx2
+matrx1-matrx2
+matrx1/matrx2
+
+t(matrx1)
+
+//converting data/matrix into table
+dat<-matrix(c(1:16),nrow=4,ncol=4)
+dat
+
+tdata<-as.table(dat)
+tdata
+colnames(dat)<-c('c1','c2','c3','c4')
+rownames(dat)<-c('r1','r2','r3','r4')
+
+tdata<-as.table(dat)
+tdata
+//plotting
+plot(1:8)
+plot(2:10, col="red")
+
+x<-c(2,3,5,6)
+y<-c(1,6,4,8)
+plot(x,y)
+
+plot(1:8, type="l")
+plot(2:10, col="red" type="l" main="my graph", xlab="xaxis", ylab="yaxis" lwd=2, lty=4)
+
+you can give lty= 1 to 6
+4--> dot dashed line
+3--> dotted line 
+2--> dashed line
+5--> long dashed line
+6--> two dashed line
+
+piechart
+
+x<-c(30,30,40)
+pie(x)
+lbl<-c("maths","sci","ss")
+colors<-c("blue","yellow","gree")
+pie(x,label=lbl, main="subjects", col=colors)
+
+x<-c(2,3,5,6)
+y<-c(1,6,4,8)
+barplot(y,names.arg=x)

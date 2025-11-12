@@ -1,0 +1,37 @@
+over()  --> over clause
+
+create table employ
+(
+eno number(6),
+ename varchar2(15),
+job varchar2(10),
+sal number(10),
+deptno number(6)
+);
+
+insert into employ values(1101,'seema','admin',25000,10);
+insert into employ values(1103,'eva','admin',30000,10);
+insert into employ values(1107,'deepa','admin',30000,10);
+
+insert into employ values(1102,'reema',account',34000,20);
+insert into employ values(1105,'hema',account',32000,20);
+
+insert into employ values(1104,'aliya','hr',35000,30);
+insert into employ values(1106,'neha','hr',31000,30);
+
+1. ROW_NUMBER()
+select eno, ename, job, sal, row_number() over(order by sal) from employ;
+
+select eno, ename, job, sal, row_number() over(order by sal) RANK from employ;
+
+select eno, ename, job, sal, RANK() over(order by sal) RANK from employ;
+
+select eno, ename, job, sal, DENSE_RANK() over(order by sal) RANK from employ;
+
+over clause includes:
+1. partition by
+2. order by
+
+select eno, ename, job, sal, DENSE_RANK() over(partition by deptno order by sal) RANK from employ;
+
+select eno, ename, job, sal, DENSE_RANK() over(partition by deptno order by sal desc) RANK from employ;
