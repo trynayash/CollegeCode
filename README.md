@@ -1,3 +1,10 @@
+
+<div align="center">
+	<img src="https://cdn.iconscout.com/icon/free/png-256/college-186-458321.png" width="120" alt="College 3D Icon"/>
+	<img src="https://cdn.iconscout.com/illustration/premium/thumb/student-studying-3121462-2618962.png" width="180" alt="Student Studying Illustration"/>
+	<img src="https://cdn.iconscout.com/animation/premium/thumb/student-learning-3456789-1234567.gif" width="160" alt="Student Learning Animation"/>
+</div>
+
 # CollegeCode Repository
 
 Welcome to the **CollegeCode** repository! This is a comprehensive collection of code and resources from my college coursework, including assignments, lab work, and projects. The repository is organized to help you easily find solutions and reference material for various subjects.
